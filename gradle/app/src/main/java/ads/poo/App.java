@@ -13,7 +13,100 @@ public class App {
 
         int[] moedas = new int[6];
 
-        // moedas[0]++;
+        int opcao = 0;
+
+        int somaAc = 0;
+
+        while (opcao != 7) {
+
+            System.out.println("Digite a opção: ");
+            System.out.println("[1] 1 centavo");
+            System.out.println("[2] 5 centavos");
+            System.out.println("[3] 10 centavos");
+            System.out.println("[4] 25 centavos");
+            System.out.println("[5] 50 centavos");
+            System.out.println("[6] 100 centavos");
+            System.out.println("[7] Sair");
+            System.out.print("-----------------");
+            opcao = teclado.nextInt();
+
+            switch (opcao) {
+
+                case 1:
+                    moedas[0]++;
+                    somaAc += 1;
+                    break;
+                case 2:
+                    moedas[1]++;
+                    somaAc += 5;
+                    break;
+                case 3:
+                    moedas[2]++;
+                    somaAc += 10;
+                    break;
+                case 4:
+                    moedas[3]++;
+                    somaAc += 25;
+                    break;
+                case 5:
+                    moedas[4]++;
+                    somaAc += 50;
+                    break;
+                case 6:
+                    moedas[5]++;
+                    somaAc += 100;
+                    break;
+                case 7:
+                    break;
+
+            }
+
+        }
+
+        for (int element : moedas) {
+            System.out.println(element);
+        }
+
+        System.out.println("----------------------------------");
+        System.out.println("Histograma - Quantidade das Moedas");
+        System.out.println("----------------------------------");
+
+
+        System.out.print("1   | ");
+        for (int i = 0; i < moedas[0]; i++) {
+            System.out.print("*");
+        }
+
+        System.out.println();
+        System.out.print("5   | ");
+        for (int i = 0; i < moedas[1]; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("10  | ");
+        for (int i = 0; i < moedas[2]; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("25  |");
+        for (int i = 0; i < moedas[3]; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("50  | ");
+        for (int i = 0; i < moedas[4]; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("100 | ");
+        for (int i = 0; i < moedas[5]; i++) {
+            System.out.print("*");
+        }
+
+        System.out.println();
+
+        System.out.println("Valor Total: " + somaAc + " centavos.");
 
     }
+
 }
