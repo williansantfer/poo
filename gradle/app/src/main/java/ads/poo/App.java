@@ -8,13 +8,10 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-
         Scanner teclado = new Scanner(System.in);
 
         int[] moedas = new int[6];
-
         int opcao = 0;
-
         int somaAc = 0;
 
         while (opcao != 7) {
@@ -26,51 +23,48 @@ public class App {
             System.out.println("[4] 25 centavos");
             System.out.println("[5] 50 centavos");
             System.out.println("[6] 100 centavos");
-            System.out.println("[7] Sair");
-            System.out.print("-----------------");
+            System.out.println("[7] Finalizar");
+            System.out.print("----------------- Opção: ");
             opcao = teclado.nextInt();
 
-            switch (opcao) {
+            if (opcao < 1 || opcao > 7) {
+                System.out.println("Opção inválida! Tente novamente.");
+            } else {
+                switch (opcao) {
 
-                case 1:
-                    moedas[0]++;
-                    somaAc += 1;
-                    break;
-                case 2:
-                    moedas[1]++;
-                    somaAc += 5;
-                    break;
-                case 3:
-                    moedas[2]++;
-                    somaAc += 10;
-                    break;
-                case 4:
-                    moedas[3]++;
-                    somaAc += 25;
-                    break;
-                case 5:
-                    moedas[4]++;
-                    somaAc += 50;
-                    break;
-                case 6:
-                    moedas[5]++;
-                    somaAc += 100;
-                    break;
-                case 7:
-                    break;
-
-            }
-
+                    case 1:
+                        moedas[0]++;
+                        somaAc += 1;
+                        break;
+                    case 2:
+                        moedas[1]++;
+                        somaAc += 5;
+                        break;
+                    case 3:
+                        moedas[2]++;
+                        somaAc += 10;
+                        break;
+                    case 4:
+                        moedas[3]++;
+                        somaAc += 25;
+                        break;
+                    case 5:
+                        moedas[4]++;
+                        somaAc += 50;
+                        break;
+                    case 6:
+                        moedas[5]++;
+                        somaAc += 100;
+                        break;
+                    case 7:
+                        break;
+                }
+            }   
         }
 
-        for (int element : moedas) {
-            System.out.println(element);
-        }
-
-        System.out.println("----------------------------------");
-        System.out.println("Histograma - Quantidade das Moedas");
-        System.out.println("----------------------------------");
-
+        System.out.println("---------------------------");
+        System.out.println("    Histograma - Moedas    ");
+        System.out.println("---------------------------");
 
         System.out.print("1   | ");
         for (int i = 0; i < moedas[0]; i++) {
@@ -104,9 +98,13 @@ public class App {
         }
 
         System.out.println();
+        System.out.println("---------------------------");
 
-        System.out.println("Valor Total: " + somaAc + " centavos.");
+        double reais = (double) somaAc / 100;
 
+        System.out.println("Quantidade de centavos: " + somaAc);
+        System.out.printf("Valor Total: R$ %.2f%n", reais);
+
+        teclado.close();
     }
-
 }
