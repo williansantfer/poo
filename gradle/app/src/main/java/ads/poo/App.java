@@ -20,7 +20,7 @@ public class App {
             System.out.println("[1] 1 centavo");
             System.out.println("[2] 5 centavos");
             System.out.println("[3] 10 centavos");
-            System.out.println("[4] 25 centavos");
+            System.out.println("[4] 25 centavos"); // SUbstituir pela msg "Qual o valor da moeda"
             System.out.println("[5] 50 centavos");
             System.out.println("[6] 100 centavos");
             System.out.println("[7] Finalizar");
@@ -57,7 +57,7 @@ public class App {
                         somaAc += 100;
                         break;
                     case 7:
-                        break;
+                        break; // Colocar um default com a msg "valor incorreto"
                 }
             }   
         }
