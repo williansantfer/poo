@@ -14,53 +14,41 @@ public class App {
         int opcao = 0;
         int somaAc = 0;
 
-        while (opcao != 7) {
-
-            System.out.println("Digite a opção: ");
-            System.out.println("[1] 1 centavo");
-            System.out.println("[2] 5 centavos");
-            System.out.println("[3] 10 centavos");
-            System.out.println("[4] 25 centavos"); // SUbstituir pela msg "Qual o valor da moeda"
-            System.out.println("[5] 50 centavos");
-            System.out.println("[6] 100 centavos");
-            System.out.println("[7] Finalizar");
-            System.out.print("----------------- Opção: ");
+        do {
+            System.out.println("Digite o valor da moeda: ");
             opcao = teclado.nextInt();
 
-            if (opcao < 1 || opcao > 7) {
-                System.out.println("Opção inválida! Tente novamente.");
-            } else {
-                switch (opcao) {
+            switch (opcao) {
 
-                    case 1:
-                        moedas[0]++;
-                        somaAc += 1;
-                        break;
-                    case 2:
-                        moedas[1]++;
-                        somaAc += 5;
-                        break;
-                    case 3:
-                        moedas[2]++;
-                        somaAc += 10;
-                        break;
-                    case 4:
-                        moedas[3]++;
-                        somaAc += 25;
-                        break;
-                    case 5:
-                        moedas[4]++;
-                        somaAc += 50;
-                        break;
-                    case 6:
-                        moedas[5]++;
-                        somaAc += 100;
-                        break;
-                    case 7:
-                        break; // Colocar um default com a msg "valor incorreto"
-                }
-            }   
-        }
+                case 1:
+                    moedas[0]++;
+                    somaAc += 1;
+                    break;
+                case 5:
+                    moedas[1]++;
+                    somaAc += 5;
+                    break;
+                case 10:
+                    moedas[2]++;
+                    somaAc += 10;
+                    break;
+                case 25:
+                    moedas[3]++;
+                    somaAc += 25;
+                    break;
+                case 50:
+                    moedas[4]++;
+                    somaAc += 50;
+                    break;
+                case 100:
+                    moedas[5]++;
+                    somaAc += 100;
+                    break;
+                default:
+                    System.out.println("Valor Incorreto. Tente novamente ou digite 0 para finalizar.");
+            }
+
+        } while (opcao != 0);
 
         System.out.println("---------------------------");
         System.out.println("    Histograma - Moedas    ");
@@ -70,7 +58,6 @@ public class App {
         for (int i = 0; i < moedas[0]; i++) {
             System.out.print("*");
         }
-
         System.out.println();
         System.out.print("5   | ");
         for (int i = 0; i < moedas[1]; i++) {
@@ -82,7 +69,7 @@ public class App {
             System.out.print("*");
         }
         System.out.println();
-        System.out.print("25  |");
+        System.out.print("25  | ");
         for (int i = 0; i < moedas[3]; i++) {
             System.out.print("*");
         }
