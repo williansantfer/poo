@@ -7,6 +7,8 @@ public class App {
 
     public static void main(String[] args) {
 
+        /*
+
         Carro fusca = new Carro();
 
         fusca.definirModelo("Fusca");
@@ -21,7 +23,38 @@ public class App {
         gol.definirVelocidade(30);
         gol.definirCor("verde");
 
-        System.out.println(gol.obterModelo() + " " + gol.obterCor() + " está a " + gol.obterVelocidade() + "Km/h");
+        System.out.println(gol.obterModelo() + " " + gol.obterCor() + " está a " + gol.obterVelocidade() + "Km/h.");
+
+        */
+
+        /*
+
+        Caneta c = new Caneta();
+        Caneta d = new Caneta();
+
+        c.definirCor("azul");
+        c.definirNivelTinta(10);
+        d.definirCor("verde");
+        d.definirNivelTinta(100);
+
+        System.out.println(c.desenhar(-15));
+        System.out.println(d.desenhar(40));
+
+        System.out.println(c.obterNivelTinta());
+        System.out.println(d.obterNivelTinta());
+
+        */
+
+        /*
+
+        Contador c = new Contador();
+
+        System.out.println(c.obterValorAtual());
+        c.definirValorContador(50);
+        c.incrementarContador();
+        System.out.println(c.obterValorAtual());
+
+        */
         
     }
 }
