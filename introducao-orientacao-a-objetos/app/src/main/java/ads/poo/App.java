@@ -55,6 +55,26 @@ public class App {
         System.out.println(c.obterValorAtual());
 
         */
+
+        Buzz b = new Buzz();
+
+        System.out.println(b.isAsasAbertas());
+        System.out.println(b.isCapaceteAberto());
+
+        System.out.println(b.abrirFecharAsas());
+        System.out.println(b.abrirFecharCapacete());
+
+        System.out.println(b.isAsasAbertas());
+        System.out.println(b.isCapaceteAberto());
+
+        System.out.println(b.abrirFecharAsas());
+        System.out.println(b.abrirFecharCapacete());
+
+        System.out.println(b.dispararLaser());
+        System.out.println(b.golpearComBracoArticulado());
+
+        System.out.println(b.falarFrase());
+        System.out.println(b.falarFrase());
         
     }
 }
