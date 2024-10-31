@@ -23,6 +23,8 @@ public class App {
 
         */
 
+        /*
+
         Pessoa p = new Pessoa("Bob", "123");
 
         System.out.println(p.obterNome());
@@ -36,6 +38,24 @@ public class App {
         System.out.println(pe.obterCpf());
 
         System.out.println(pe.toString());
+
+        */
+
+        /*
+
+        Carro c = new Carro("fusca", 500, 200);
+
+        // carro vai estar a 200
+
+        c.acelerar(-300);
+
+        */
+
+        Estudante e = new Estudante("Bob", 123, "ADS");
+
+        Estudante c = new Estudante("Ana", 321, "Telecomunicações");
+
+        System.out.println("Total de Estudantes = " + Estudante.getTotal());
 
     }
 }
