@@ -12,6 +12,7 @@ public class Aluno {
     private ArrayList<String> telefones;
     private HashSet<String> disciplinas;
 
+
     public Aluno(String nome, int matricula, String pai, String mae) {
         this.nome = nome;
         this.matricula = matricula;
@@ -38,32 +39,37 @@ public class Aluno {
         this.matricula = matricula;
     }
 
-    public ArrayList<String> getTelefones() {
-        return telefones;
-    }
-
-    public void setTelefones(ArrayList<String> telefones) {
-        this.telefones = telefones;
-    }
-
     public boolean adicionarDisciplina(String d) {
         return this.disciplinas.add(d);
     }
 
+    public boolean adicionarTelefone(String t) {
+        return this.telefones.add(t);
+    }
 
     @Override
     public String toString() {
-        return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", matricula=" + matricula +
-                ", filiacao=" + filiacao +
-                '}';
+
+        StringBuilder sb = new StringBuilder("Matrícula: " + matricula + "\n");
+        sb.append("Nome: " + nome + "\n");
+        sb.append("Filiação: \n");
+        sb.append("   Pai: " + this.filiacao.get(0) + "\n");
+        sb.append("   Mãe: " + this.filiacao.get(1) + "\n");
+
+
+        sb.append("Telefones: ");
+
+        for (String elemento : telefones) {
+            sb.append("\n   - ").append(elemento);
+        }
+
+        sb.append("\nDisciplinas: ");
+
+        for (String elemento : disciplinas) {
+            sb.append("\n   - ").append(elemento);
+        }
+
+        return sb.toString();
     }
 
-    // aluno vai ter nome, 1 matricula, n telefones, filiação (pai e mãe)
-
-    /*
-        Disciplinas que o aluno esta cursando (String) guardar sigla;
-
-     */
 }
